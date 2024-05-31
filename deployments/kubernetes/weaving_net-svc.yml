@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: weaving-net-svc
+  namespace: weaving-net
+spec:
+  selector:
+    app: weaving-net
+  type: ClusterIP
+  ports:
+    - name: weaving-net-svc-http-port
+      port: 8080
+      targetPort: 8080
+
