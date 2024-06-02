@@ -62,8 +62,8 @@ func (u mock) ListByIDs(c *gin.Context)      { return }
 func (u mock) ListByLastID(c *gin.Context)   { return }
 func (u mock) List(c *gin.Context)           { return }
 
-func Test_usersRouter(t *testing.T) {
+func Test_educationsRouter(t *testing.T) {
 	gin.SetMode(gin.ReleaseMode)
 	r := gin.Default()
-	usersRouter(r.Group("/"), &mock{})
+	educationsRouter(r.Group("/"), &mock{})
 }

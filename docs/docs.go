@@ -16,9 +16,9 @@ const docTemplate = `{
     "host": "{{.Host}}",
     "basePath": "{{.BasePath}}",
     "paths": {
-        "/api/v1/users": {
+        "/api/v1/educations": {
             "post": {
-                "description": "submit information to create users",
+                "description": "submit information to create educations",
                 "consumes": [
                     "application/json"
                 ],
@@ -26,17 +26,17 @@ const docTemplate = `{
                     "application/json"
                 ],
                 "tags": [
-                    "users"
+                    "educations"
                 ],
-                "summary": "create users",
+                "summary": "create educations",
                 "parameters": [
                     {
-                        "description": "users information",
+                        "description": "educations information",
                         "name": "data",
                         "in": "body",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/types.CreateUsersRequest"
+                            "$ref": "#/definitions/types.CreateEducationsRequest"
                         }
                     }
                 ],
@@ -44,15 +44,15 @@ const docTemplate = `{
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/types.CreateUsersRespond"
+                            "$ref": "#/definitions/types.CreateEducationsRespond"
                         }
                     }
                 }
             }
         },
-        "/api/v1/users/condition": {
+        "/api/v1/educations/condition": {
             "post": {
-                "description": "get users by condition",
+                "description": "get educations by condition",
                 "consumes": [
                     "application/json"
                 ],
@@ -60,9 +60,9 @@ const docTemplate = `{
                     "application/json"
                 ],
                 "tags": [
-                    "users"
+                    "educations"
                 ],
-                "summary": "get users by condition",
+                "summary": "get educations by condition",
                 "parameters": [
                     {
                         "description": "query condition",
@@ -78,15 +78,15 @@ const docTemplate = `{
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/types.GetUsersByConditionRespond"
+                            "$ref": "#/definitions/types.GetEducationsByConditionRespond"
                         }
                     }
                 }
             }
         },
-        "/api/v1/users/delete/ids": {
+        "/api/v1/educations/delete/ids": {
             "post": {
-                "description": "delete userss by batch id",
+                "description": "delete educationss by batch id",
                 "consumes": [
                     "application/json"
                 ],
@@ -94,9 +94,9 @@ const docTemplate = `{
                     "application/json"
                 ],
                 "tags": [
-                    "users"
+                    "educations"
                 ],
-                "summary": "delete userss",
+                "summary": "delete educationss",
                 "parameters": [
                     {
                         "description": "id array",
@@ -104,7 +104,7 @@ const docTemplate = `{
                         "in": "body",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/types.DeleteUserssByIDsRequest"
+                            "$ref": "#/definitions/types.DeleteEducationssByIDsRequest"
                         }
                     }
                 ],
@@ -112,15 +112,15 @@ const docTemplate = `{
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/types.DeleteUserssByIDsRespond"
+                            "$ref": "#/definitions/types.DeleteEducationssByIDsRespond"
                         }
                     }
                 }
             }
         },
-        "/api/v1/users/list": {
+        "/api/v1/educations/list": {
             "get": {
-                "description": "list of userss by last id and limit",
+                "description": "list of educationss by last id and limit",
                 "consumes": [
                     "application/json"
                 ],
@@ -128,9 +128,9 @@ const docTemplate = `{
                     "application/json"
                 ],
                 "tags": [
-                    "users"
+                    "educations"
                 ],
-                "summary": "list of userss by last id and limit",
+                "summary": "list of educationss by last id and limit",
                 "parameters": [
                     {
                         "type": "integer",
@@ -158,13 +158,13 @@ const docTemplate = `{
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/types.ListUserssRespond"
+                            "$ref": "#/definitions/types.ListEducationssRespond"
                         }
                     }
                 }
             },
             "post": {
-                "description": "list of userss by paging and conditions",
+                "description": "list of educationss by paging and conditions",
                 "consumes": [
                     "application/json"
                 ],
@@ -172,9 +172,9 @@ const docTemplate = `{
                     "application/json"
                 ],
                 "tags": [
-                    "users"
+                    "educations"
                 ],
-                "summary": "list of userss by query parameters",
+                "summary": "list of educationss by query parameters",
                 "parameters": [
                     {
                         "description": "query parameters",
@@ -190,15 +190,15 @@ const docTemplate = `{
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/types.ListUserssRespond"
+                            "$ref": "#/definitions/types.ListEducationssRespond"
                         }
                     }
                 }
             }
         },
-        "/api/v1/users/list/ids": {
+        "/api/v1/educations/list/ids": {
             "post": {
-                "description": "list of userss by batch id",
+                "description": "list of educationss by batch id",
                 "consumes": [
                     "application/json"
                 ],
@@ -206,9 +206,9 @@ const docTemplate = `{
                     "application/json"
                 ],
                 "tags": [
-                    "users"
+                    "educations"
                 ],
-                "summary": "list of userss by batch id",
+                "summary": "list of educationss by batch id",
                 "parameters": [
                     {
                         "description": "id array",
@@ -216,7 +216,7 @@ const docTemplate = `{
                         "in": "body",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/types.ListUserssByIDsRequest"
+                            "$ref": "#/definitions/types.ListEducationssByIDsRequest"
                         }
                     }
                 ],
@@ -224,15 +224,15 @@ const docTemplate = `{
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/types.ListUserssByIDsRespond"
+                            "$ref": "#/definitions/types.ListEducationssByIDsRespond"
                         }
                     }
                 }
             }
         },
-        "/api/v1/users/{id}": {
+        "/api/v1/educations/{id}": {
             "get": {
-                "description": "get users detail by id",
+                "description": "get educations detail by id",
                 "consumes": [
                     "application/json"
                 ],
@@ -240,9 +240,9 @@ const docTemplate = `{
                     "application/json"
                 ],
                 "tags": [
-                    "users"
+                    "educations"
                 ],
-                "summary": "get users detail",
+                "summary": "get educations detail",
                 "parameters": [
                     {
                         "type": "string",
@@ -256,13 +256,13 @@ const docTemplate = `{
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/types.GetUsersByIDRespond"
+                            "$ref": "#/definitions/types.GetEducationsByIDRespond"
                         }
                     }
                 }
             },
             "put": {
-                "description": "update users information by id",
+                "description": "update educations information by id",
                 "consumes": [
                     "application/json"
                 ],
@@ -270,9 +270,9 @@ const docTemplate = `{
                     "application/json"
                 ],
                 "tags": [
-                    "users"
+                    "educations"
                 ],
-                "summary": "update users",
+                "summary": "update educations",
                 "parameters": [
                     {
                         "type": "string",
@@ -282,12 +282,12 @@ const docTemplate = `{
                         "required": true
                     },
                     {
-                        "description": "users information",
+                        "description": "educations information",
                         "name": "data",
                         "in": "body",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/types.UpdateUsersByIDRequest"
+                            "$ref": "#/definitions/types.UpdateEducationsByIDRequest"
                         }
                     }
                 ],
@@ -295,13 +295,13 @@ const docTemplate = `{
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/types.UpdateUsersByIDRespond"
+                            "$ref": "#/definitions/types.UpdateEducationsByIDRespond"
                         }
                     }
                 }
             },
             "delete": {
-                "description": "delete users by id",
+                "description": "delete educations by id",
                 "consumes": [
                     "application/json"
                 ],
@@ -309,9 +309,9 @@ const docTemplate = `{
                     "application/json"
                 ],
                 "tags": [
-                    "users"
+                    "educations"
                 ],
-                "summary": "delete users",
+                "summary": "delete educations",
                 "parameters": [
                     {
                         "type": "string",
@@ -325,7 +325,7 @@ const docTemplate = `{
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/types.DeleteUsersByIDRespond"
+                            "$ref": "#/definitions/types.DeleteEducationsByIDRespond"
                         }
                     }
                 }
@@ -471,7 +471,7 @@ const docTemplate = `{
                 }
             }
         },
-        "types.CreateUsersRequest": {
+        "types.CreateEducationsRequest": {
             "type": "object",
             "properties": {
                 "age": {
@@ -508,7 +508,7 @@ const docTemplate = `{
                 }
             }
         },
-        "types.CreateUsersRespond": {
+        "types.CreateEducationsRespond": {
             "type": "object",
             "properties": {
                 "code": {
@@ -531,7 +531,7 @@ const docTemplate = `{
                 }
             }
         },
-        "types.DeleteUsersByIDRespond": {
+        "types.DeleteEducationsByIDRespond": {
             "type": "object",
             "properties": {
                 "code": {
@@ -547,7 +547,7 @@ const docTemplate = `{
                 }
             }
         },
-        "types.DeleteUserssByIDsRequest": {
+        "types.DeleteEducationssByIDsRequest": {
             "type": "object",
             "properties": {
                 "ids": {
@@ -560,7 +560,7 @@ const docTemplate = `{
                 }
             }
         },
-        "types.DeleteUserssByIDsRespond": {
+        "types.DeleteEducationssByIDsRespond": {
             "type": "object",
             "properties": {
                 "code": {
@@ -576,7 +576,7 @@ const docTemplate = `{
                 }
             }
         },
-        "types.GetUsersByConditionRespond": {
+        "types.GetEducationsByConditionRespond": {
             "type": "object",
             "properties": {
                 "code": {
@@ -587,8 +587,8 @@ const docTemplate = `{
                     "description": "return data",
                     "type": "object",
                     "properties": {
-                        "users": {
-                            "$ref": "#/definitions/types.UsersObjDetail"
+                        "educations": {
+                            "$ref": "#/definitions/types.EducationsObjDetail"
                         }
                     }
                 },
@@ -598,7 +598,7 @@ const docTemplate = `{
                 }
             }
         },
-        "types.GetUsersByIDRespond": {
+        "types.GetEducationsByIDRespond": {
             "type": "object",
             "properties": {
                 "code": {
@@ -609,8 +609,8 @@ const docTemplate = `{
                     "description": "return data",
                     "type": "object",
                     "properties": {
-                        "users": {
-                            "$ref": "#/definitions/types.UsersObjDetail"
+                        "educations": {
+                            "$ref": "#/definitions/types.EducationsObjDetail"
                         }
                     }
                 },
@@ -620,7 +620,7 @@ const docTemplate = `{
                 }
             }
         },
-        "types.ListUserssByIDsRequest": {
+        "types.ListEducationssByIDsRequest": {
             "type": "object",
             "properties": {
                 "ids": {
@@ -633,7 +633,7 @@ const docTemplate = `{
                 }
             }
         },
-        "types.ListUserssByIDsRespond": {
+        "types.ListEducationssByIDsRespond": {
             "type": "object",
             "properties": {
                 "code": {
@@ -644,10 +644,10 @@ const docTemplate = `{
                     "description": "return data",
                     "type": "object",
                     "properties": {
-                        "userss": {
+                        "educationss": {
                             "type": "array",
                             "items": {
-                                "$ref": "#/definitions/types.UsersObjDetail"
+                                "$ref": "#/definitions/types.EducationsObjDetail"
                             }
                         }
                     }
@@ -658,7 +658,7 @@ const docTemplate = `{
                 }
             }
         },
-        "types.ListUserssRespond": {
+        "types.ListEducationssRespond": {
             "type": "object",
             "properties": {
                 "code": {
@@ -669,10 +669,10 @@ const docTemplate = `{
                     "description": "return data",
                     "type": "object",
                     "properties": {
-                        "userss": {
+                        "educationss": {
                             "type": "array",
                             "items": {
-                                "$ref": "#/definitions/types.UsersObjDetail"
+                                "$ref": "#/definitions/types.EducationsObjDetail"
                             }
                         }
                     }
@@ -683,7 +683,7 @@ const docTemplate = `{
                 }
             }
         },
-        "types.UpdateUsersByIDRequest": {
+        "types.UpdateEducationsByIDRequest": {
             "type": "object",
             "properties": {
                 "age": {
@@ -720,7 +720,7 @@ const docTemplate = `{
                 }
             }
         },
-        "types.UpdateUsersByIDRespond": {
+        "types.UpdateEducationsByIDRespond": {
             "type": "object",
             "properties": {
                 "code": {
@@ -736,7 +736,7 @@ const docTemplate = `{
                 }
             }
         },
-        "types.UsersObjDetail": {
+        "types.EducationsObjDetail": {
             "type": "object",
             "properties": {
                 "age": {
